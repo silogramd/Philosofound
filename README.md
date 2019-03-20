@@ -1,4 +1,6 @@
 The back end to our philosofound project
+Currently implemented: questions, answers, basic user info (name + email)
+User is written but not functional for testing purposes - we want a working question answer interface first
 
 To test:
 
