@@ -9,20 +9,27 @@ To test:
 
 1:
 > sudo mysql --password
+
 > mysql> create database db_example; -- Create the new database
+
 > mysql> create user 'springuser'@'%' identified by 'ThePassword'; -- Creates the user
+
 > mysql> grant all on db_example.* to 'springuser'@'%'; -- Gives all the privileges to the new user on the newly created database
 (this allows our application to access the mysql database)
 
 2:
 > git clone https://github.com/JakeChvatal/philosofound-backend.git
+
 > cd philosofound
+
 > ./mvnw spring-boot:run
 (starts the server in the terminal)
 
 To test, visit these URLs:
 > localhost:8080/api/all - shows what is stored
+
 > localhost:8080/api/add/question?question=(question)
+
 > localhost:8080/api/add/answer?questionID=(questionID)&answer=(answer)
 
 where (question) is your question with '+' denoting spaces,
