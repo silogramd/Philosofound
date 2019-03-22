@@ -16,28 +16,25 @@ import java.util.stream.Stream;
 @EqualsAndHashCode(exclude = "answers")
 
 @Entity // This tells Hibernate to make a table out of this class
+@Table(name = "questions")
 public class Question {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-
+    
+    //@NotNull
+    //@Column(unique = true)
     private String question;
     
-    //@ManyToOne
-    //@JoinColumn
-    //private User user;
-
-    @OneToMany(mappedBy="question", cascade = CascadeType.ALL)
-    private Set<Answer> answers;
+    //@OneToMany(mappedBy="question", cascade = CascadeType.ALL)
+    //private Set<Answer> answers;
 
     public Question() {
 
     }
 
-    public Question(String question, Answer... answers) {
+    public Question(String question) {
         this.question = question;
-        this.answers = Stream.of(answers).collect(Collectors.toSet());
-        this.answers.forEach(x -> x.setQuestion(this));
     }
 
     public Integer getId() {
@@ -55,9 +52,4 @@ public class Question {
 	public void setQuestion(String question) {
 		this.question = question;
 	}
-
-    public void addAnswer(Answer answer) {
-        answers.add(answer);
-    }
 }
-

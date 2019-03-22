@@ -11,7 +11,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Data
-
+@Table(name = "answers")
 @Entity // This tells Hibernate to make a table out of this class
 public class Answer {
     @Id
@@ -20,9 +20,9 @@ public class Answer {
 
     private String answer;
     
-    @ManyToOne
-    @JoinColumn
-    private int question;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "post_id", nullable = false)
+    private Question question;
     
     public Answer() {
 
@@ -49,7 +49,7 @@ public class Answer {
 	}
 
     public void setQuestion(Question question) {
-        this.question = question.getId();
+        this.question = question;
     }
 }
 
