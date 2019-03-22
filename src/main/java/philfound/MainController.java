@@ -41,7 +41,6 @@ public class MainController {
         Answer n = new Answer();
 		n.setAnswer(answer);
 		q.addAnswer(n);
-        n.setQuestion(q);
         answerRepository.save(n);
 		return "Saved answer " + answer + "in database";
 	}
