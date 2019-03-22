@@ -33,7 +33,7 @@ public class MainController {
 		return "Saved question " + question + " in database";
 	}
 
-	@GetMapping(path="/add/answer") // Map ONLY GET Requests
+	@GetMapping(path="/add/answer") 
 	public @ResponseBody String addNewAnswer (@RequestParam Integer questionID, @RequestParam String answer) {
 		// @ResponseBody means the returned String is the response, not a view name
 		// @RequestParam means it is a parameter from the GET or POST request
@@ -42,7 +42,7 @@ public class MainController {
 		n.setAnswer(answer);
 		q.addAnswer(n);
         answerRepository.save(n);
-		return "Saved answer " + answer + "in database";
+		return "Saved answer " + answer + " in database";
 	}
 	
 	@GetMapping(path="/all")
