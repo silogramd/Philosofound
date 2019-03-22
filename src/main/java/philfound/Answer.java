@@ -22,7 +22,7 @@ public class Answer {
     
     @ManyToOne
     @JoinColumn
-    private Question question;
+    private int question;
     
     public Answer() {
 
@@ -49,7 +49,7 @@ public class Answer {
 	}
 
     public void setQuestion(Question question) {
-        this.question = question;
+        this.question = question.id;
     }
 }
 
