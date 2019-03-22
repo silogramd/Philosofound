@@ -48,6 +48,6 @@ public class MainController {
 	@GetMapping(path="/all")
 	public @ResponseBody Iterable<Question> getAllQuestions() {
 		// This returns a JSON or XML with the users
-		return questionRepository.findAll();
+		return questionRepository.findAll() + answerRepository.findAll();
 	}
 }
