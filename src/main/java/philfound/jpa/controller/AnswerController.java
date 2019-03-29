@@ -22,7 +22,7 @@ public class AnswerController {
     private QuestionRepository questionRepository;
 
     @GetMapping("/questions/{questionId}/answers")
-    public Page<Comment> getAllAnswersByQuestionId(@PathVariable (value = "questionId") Long questionId,
+    public Page<Answer> getAllAnswersByQuestionId(@PathVariable (value = "questionId") Long questionId,
                                                 Pageable pageable) {
         return answerRepository.findByQuestionId(questionId, pageable);
     }
