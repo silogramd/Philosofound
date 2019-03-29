@@ -32,7 +32,7 @@ public class QuestionController {
         return questionRepository.findById(questionId).map(question -> {
             question.setQuestion(questionRequest.getQuestion());
             return questionRepository.save(question);
-            
+
         }).orElseThrow(() -> new ResourceNotFoundException("QuestionId " + questionId + " not found"));
     }
 
