@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 public interface AnswerRepository extends JpaRepository<Answer, Long>{
-    Page<Answer> findByPostId(Long postId, Pageable pageable);
-    Optional<Answer> findByIdAndPostId(Long id, Long postId);
+    Page<Answer> findByAnswerId(Long postId, Pageable pageable);
+    Optional<Answer> findByIdAndQuestionId(Long id, Long questionId);
 }
