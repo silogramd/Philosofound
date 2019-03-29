@@ -48,11 +48,11 @@ public class Answer extends AuditModel{
 		this.id = id;
 	}
 
-	public String getAnswer() {
+	public String getText() {
 		return answer;
 	}
 
-	public void setAnswer(String answer) {
+	public void setText(String answer) {
 		this.answer = answer;
 	}
 
