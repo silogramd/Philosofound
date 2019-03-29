@@ -23,8 +23,8 @@ public class QuestionController {
     }
 
     @PostMapping("/questions")
-    public Question createQuestion(@Valid @RequestBody Question question) {
-        return questionRepository.save(question);
+    public Question createQuestion(@Valid @RequestBody String question) {
+        return questionRepository.save(new Question(question));
     }
 
     @PutMapping("/questions/{questionId}")
@@ -32,7 +32,7 @@ public class QuestionController {
         return questionRepository.findById(questionId).map(question -> {
             question.setQuestion(questionRequest.getQuestion());
             return questionRepository.save(question);
-            
+
         }).orElseThrow(() -> new ResourceNotFoundException("QuestionId " + questionId + " not found"));
     }
 
