@@ -23,8 +23,8 @@ public class QuestionController {
     }
 
     @PostMapping("/questions")
-    public Question createQuestion(@Valid @RequestBody String question) {
-        return questionRepository.save(new Question(question));
+    public Question createQuestion(@Valid @RequestBody Question question) {
+        return questionRepository.save(question);
     }
 
     @PutMapping("/questions/{questionId}")
