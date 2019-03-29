@@ -22,7 +22,7 @@ import org.hibernate.annotations.OnDeleteAction;
 public class Answer extends AuditModel{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     
     @NotNull
     @Lob

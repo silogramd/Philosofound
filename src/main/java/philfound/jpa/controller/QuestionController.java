@@ -1,4 +1,4 @@
-package philfound;
+package philfound.jpa.controller;
 
 import philfound.Question;
 import org.springframework.beans.factory.annotation.Autowired;

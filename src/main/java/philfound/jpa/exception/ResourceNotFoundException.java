@@ -1,4 +1,4 @@
-package com.example.jpa.exception;
+package philfound.jpa.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
