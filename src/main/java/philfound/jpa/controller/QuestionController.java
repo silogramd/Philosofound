@@ -1,18 +1,21 @@
 package philfound.jpa.controller;
 
-import philfound.Question;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import philfound.jpa.model.Question;
+import philfound.jpa.repository.QuestionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import philfound.jpa.exception.ResourceNotFoundException;
 
 import javax.validation.Valid;
 
 @RestController
 public class QuestionController {
     @Autowired
-    private Question questionRepository;
+    private QuestionRepository questionRepository;
 
     @GetMapping("/questions")
     public Page<Question> getAllQuestions(Pageable pageable) {
