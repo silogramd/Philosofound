@@ -40,7 +40,6 @@ public class MainController {
 		Question q = questionRepository.findById(questionID).orElse(new Question());
         Answer n = new Answer();
 		n.setAnswer(answer);
-		q.addAnswer(n);
         answerRepository.save(n);
 		return "Saved answer " + answer + " in database";
 	}

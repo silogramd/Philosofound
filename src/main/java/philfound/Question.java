@@ -1,4 +1,4 @@
-package philfound;
+package philfound.jpa.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,24 +11,24 @@ import lombok.*;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Data
 @EqualsAndHashCode(exclude = "answers")
 
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "questions")
-public class Question {
+public class Question extends AuditModel {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     
-    //@NotNull
-    //@Column(unique = true)
+    @NotNull
+    @Column(unique = true)
     private String question;
     
-    //@OneToMany(mappedBy="question", cascade = CascadeType.ALL)
-    //private Set<Answer> answers;
-
     public Question() {
 
     }
@@ -37,11 +37,11 @@ public class Question {
         this.question = question;
     }
 
-    public Integer getId() {
+    public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
