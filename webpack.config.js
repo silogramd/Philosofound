@@ -1,4 +1,4 @@
-var path = require('path');
+const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
@@ -7,8 +7,8 @@ module.exports = {
     cache: true,
     mode: 'development',
     output: {
-        path: __dirname,
-        filename: './src/main/resources/static/built/bundle.js'
+        filename:'bundle.js',
+        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
