@@ -1,6 +1,11 @@
 **Philosofound**
 The back end to our philosofound project
 
+TODO:
+query for userId in question and answer should get all users
+then see if user.getId == userId 
+and get all the questions for those
+
 Currently implemented: questions, answers, basic user info (name + email)
 User is written but not functional for testing purposes - 
 we want a working question answer interface first
