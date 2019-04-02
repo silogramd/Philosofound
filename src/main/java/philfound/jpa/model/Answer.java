@@ -23,15 +23,19 @@ public class Answer extends AuditModel{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    
+
     @NotNull
     @Lob
     private String answer;
-    
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "post_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "question_id", nullable = false)
     private Question question;
-    
+
     public Answer() {
 
     }
@@ -60,4 +64,3 @@ public class Answer extends AuditModel{
         this.question = question;
     }
 }
-

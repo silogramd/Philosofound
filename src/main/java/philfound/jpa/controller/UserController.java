@@ -1,21 +1,24 @@
 package philfound.jpa.controller;
 
-import philfound.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import philfound.jpa.model.User;
+import philfound.jpa.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import philfound.jpa.exception.ResourceNotFoundException;
 
 import javax.validation.Valid;
 
 @RestController
 public class UserController {
     @Autowired
-    private User userRepository;
+    private UserRepository userRepository;
 
     @GetMapping("/users")
-    public Page<User> getAllUsers(Pageable pageable) {
+    public Page<Question> getAllUsers(Pageable pageable) {
         return userRepository.findAll(pageable);
     }
 
@@ -29,8 +32,8 @@ public class UserController {
         return userRepository.findById(userId).map(user -> {
             user.setUser(userRequest.getUser());
             return userRepository.save(user);
-            
-        }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
+
+        }).orElseThrow(() -> new ResourceNotFoundException("UserID " + userId + " not found"));
     }
 
     @DeleteMapping("/users/{userId}")

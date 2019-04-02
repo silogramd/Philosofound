@@ -24,11 +24,15 @@ public class Question extends AuditModel {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    
+
     @NotNull
     @Column(unique = true)
     private String question;
-    
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     public Question() {
 
     }
