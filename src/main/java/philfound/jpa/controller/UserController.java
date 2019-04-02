@@ -27,14 +27,14 @@ public class UserController {
         return userRepository.save(user);
     }
 
-    // @PutMapping("/users/{userId}")
-    // public User updateUser(@PathVariable Long userId, @Valid @RequestBody User userRequest) {
-    //     return userRepository.findById(userId).map(user -> {
-    //         user.setUser(userRequest.getUser());
-    //         return userRepository.save(user);
-    //
-    //     }).orElseThrow(() -> new ResourceNotFoundException("UserID " + userId + " not found"));
-    // }
+    @PutMapping("/users/{userId}")
+    public User updateUser(@PathVariable Long userId, @Valid @RequestBody User userRequest) {
+        return userRepository.findById(userId).map(user -> {
+            user.setUsername(userRequest.getUsername());
+            return userRepository.save(user);
+
+        }).orElseThrow(() -> new ResourceNotFoundException("UserID " + userId + " not found"));
+    }
 
     @DeleteMapping("/users/{userId}")
     public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
