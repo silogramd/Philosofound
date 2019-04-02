@@ -4,6 +4,7 @@ import philfound.jpa.exception.ResourceNotFoundException;
 import philfound.jpa.model.Answer;
 import philfound.jpa.repository.AnswerRepository;
 import philfound.jpa.repository.QuestionRepository;
+import philfound.jpa.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,7 +22,7 @@ public class AnswerController {
     @Autowired
     private QuestionRepository questionRepository;
 
-    @Autoowired
+    @Autowired
     private UserRepository userRepository;
 
     @GetMapping("/answers")
