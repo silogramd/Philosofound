@@ -24,9 +24,8 @@
     "svg-react-loader": "^0.4.6"
   },
   "scripts": {
-    "start": "./src/main/resources/static/built/bundle.js",
+    "start": "react-scripts start",
     "build": "webpack",
-    "main": "./src/main/resources/static/built/bundle.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch": "webpack --watch -d"

@@ -17,6 +17,7 @@ import javax.validation.Valid;
 
 @RestController
 public class QuestionController {
+
     @Autowired
     private QuestionRepository questionRepository;
 
@@ -38,7 +39,7 @@ public class QuestionController {
     public Question createQuestion(@PathVariable(value = "userId") Long userId, @Valid @RequestBody Question question) {
         return userRepository.findById(userId).map(user -> {
           question.setUser(user);
-          return questionRepository.save(user);
+          return questionRepository.save(question);
         }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
     }
 
