@@ -32,7 +32,7 @@ public class User extends AuditModel{
 
     @NotNull
     @Column(unique = true)
-    private String passsword;
+    private String password;
 
     @NotNull
     @Column
@@ -80,7 +80,7 @@ public class User extends AuditModel{
   }
 
   public String getPassword() {
-    return password;
+    return this.password;
   }
 
   public void setPassword(String p) {
