@@ -54,12 +54,12 @@ public class User extends AuditModel{
 
     }
 
-    public User(String username, String password, String gender, String incomeLevel, String geography, String party) {
-        this.username = username;
-        this.password = password;
-        this.gender = gender;
-        this.incomeLevel = incomeLevel;
-        this.geography = geography;
+    public User(String u, String p, String g, String i, String geo, String party) {
+        this.username = u;
+        this.password = p;
+        this.gender = g;
+        this.incomeLevel = i;
+        this.geography = geo;
         this.party = party;
     }
 
@@ -80,7 +80,7 @@ public class User extends AuditModel{
   }
 
   public String getPassword() {
-    return this.password;
+    return password;
   }
 
   public void setPassword(String p) {
