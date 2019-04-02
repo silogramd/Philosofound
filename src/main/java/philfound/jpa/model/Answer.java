@@ -19,7 +19,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Data
 @Table(name = "answers")
 @Entity // This tells Hibernate to make a table out of this class
-public class Answer extends AuditModel{
+public class Answer{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;

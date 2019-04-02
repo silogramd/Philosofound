@@ -21,7 +21,7 @@ import javax.validation.constraints.Size;
 
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "users")
-public class User extends AuditModel{
+public class User{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
