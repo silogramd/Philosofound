@@ -21,11 +21,24 @@ public class AnswerController {
     @Autowired
     private QuestionRepository questionRepository;
 
+    @Autoowired
+    private UserRepository userRepository;
+
+    @GetMapping("/answers")
+    public Page<Answer> getAllAnswers(Pageable pageable) {
+        return answerRepository.findAll(pageable);
+    }
+
     @GetMapping("/questions/{questionId}/answers")
     public Page<Answer> getAllAnswersByQuestionId(@PathVariable (value = "questionId") Long questionId,
                                                 Pageable pageable) {
         return answerRepository.findByQuestionId(questionId, pageable);
     }
+    @GetMapping("/answers/{answerId}/user")
+    public Page<Answer> getAllAnswersByUserId(@PathVariable (value = "userId") Long userId,
+                                                Pageable pageable) {
+        return answerRepository.findByUserId(userId, pageable);
+
 
     @PostMapping("/questions/{questionId}/answers")
     public Answer createAnswer(@PathVariable (value = "questionId") Long questionId,
