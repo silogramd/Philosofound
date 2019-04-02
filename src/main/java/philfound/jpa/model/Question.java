@@ -45,6 +45,10 @@ public class Question extends AuditModel {
 		return id;
 	}
 
+  public Long getUserId() {
+    return user.getId();
+  }
+
 	public void setId(Long id) {
 		this.id = id;
 	}

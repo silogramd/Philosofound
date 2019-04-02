@@ -88,7 +88,7 @@ public class User extends AuditModel{
   }
 
   public String getGender() {
-    return this.gender
+    return this.gender;
   }
 
   public void setGender(String gender) {

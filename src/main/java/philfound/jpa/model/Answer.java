@@ -52,6 +52,10 @@ public class Answer extends AuditModel{
 		this.id = id;
 	}
 
+  public Long getUserId() {
+    return user.getId();
+  }
+
 	public String getText() {
 		return answer;
 	}
