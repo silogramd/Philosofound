@@ -37,8 +37,9 @@ public class Question extends AuditModel {
 
     }
 
-    public Question(String question) {
+    public Question(String question, User user) {
         this.question = question;
+
     }
 
     public Long getId() {
@@ -47,6 +48,14 @@ public class Question extends AuditModel {
 
   public Long getUserId() {
     return user.getId();
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
+
+  public User getUser() {
+    return this.user;
   }
 
 	public void setId(Long id) {

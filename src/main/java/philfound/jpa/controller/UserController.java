@@ -27,12 +27,12 @@ public class UserController {
         return userRepository.save(user);
     }
 
+    // never going to use this
     @PutMapping("/users/{userId}")
     public User updateUser(@PathVariable Long userId, @Valid @RequestBody User userRequest) {
         return userRepository.findById(userId).map(user -> {
             user.setUsername(userRequest.getUsername());
             return userRepository.save(user);
-
         }).orElseThrow(() -> new ResourceNotFoundException("UserID " + userId + " not found"));
     }
 

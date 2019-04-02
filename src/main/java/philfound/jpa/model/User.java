@@ -75,6 +75,7 @@ public class User extends AuditModel{
     return this.username;
   }
 
+
   public void setUsername(String u) {
     this.username = u;
   }

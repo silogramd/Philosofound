@@ -2,6 +2,7 @@ package philfound.jpa.controller;
 
 import org.springframework.data.domain.Page;
 import philfound.jpa.model.Question;
+import philfound.jpa.repository.AnswerRepository;
 import philfound.jpa.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class QuestionController {
     @Autowired
     private QuestionRepository questionRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @GetMapping("/questions")
     public Page<Question> getAllQuestions(Pageable pageable) {
         return questionRepository.findAll(pageable);
@@ -28,9 +32,12 @@ public class QuestionController {
         return questionRepository.findByUserId(userId, pageable);
     }
 
-    @PostMapping("/questions")
-    public Question createQuestion(@Valid @RequestBody Question question) {
-        return questionRepository.save(question);
+    @PostMapping("/questions/{userId}")
+    public Question createQuestion(@PathVariable(value = "userId") Long userId, @Valid @RequestBody Question question) {
+        return userRepository.findById(userId).map(user -> {
+          question.setUser(user);
+          return questionRepository.save(user);
+        }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
     }
 
     @PutMapping("/questions/{questionId}")

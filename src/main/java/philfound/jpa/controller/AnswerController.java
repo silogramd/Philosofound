@@ -41,16 +41,21 @@ public class AnswerController {
         return answerRepository.findByUserId(userId, pageable);
     }
 
-    @PostMapping("/questions/{questionId}/answers")
+    @PostMapping("/questions/{questionId}/answers/{userId}")
     public Answer createAnswer(@PathVariable(value = "questionId") Long questionId,
+                               @PathVariable(value = "userId") Long userId,
                                  @Valid @RequestBody Answer answer) {
         return questionRepository.findById(questionId).map(question -> {
-            answer.setQuestion(question);
+          answer.setQuestion(question);
+          return userRepostory.findById(userId).map(user -> {
+            answer.setUser(user);
             return answerRepository.save(answer);
+          }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
+
         }).orElseThrow(() -> new ResourceNotFoundException("QuestionId " + questionId + " not found"));
     }
 
-    @PutMapping("/questions/{questionnId}/answers/{answerId}")
+    @PutMapping("/questions/{questionId}/answers/{answerId}")
     public Answer updateAnswer(@PathVariable(value = "questionId") Long questionId,
                                  @PathVariable(value = "answerId") Long answerId,
                                  @Valid @RequestBody Answer answerRequest) {
