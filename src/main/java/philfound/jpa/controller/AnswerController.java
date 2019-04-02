@@ -30,18 +30,18 @@ public class AnswerController {
     }
 
     @GetMapping("/questions/{questionId}/answers")
-    public Page<Answer> getAllAnswersByQuestionId(@PathVariable (value = "questionId") Long questionId,
+    public Page<Answer> getAllAnswersByQuestionId(@PathVariable(value = "questionId") Long questionId,
                                                 Pageable pageable) {
         return answerRepository.findByQuestionId(questionId, pageable);
     }
-    @GetMapping("/answers/{answerId}/user")
-    public Page<Answer> getAllAnswersByUserId(@PathVariable (value = "userId") Long userId,
+    @GetMapping("/users/{userId}/answers")
+    public Page<Answer> getAllAnswersByUserId(@PathVariable(value = "userId") Long userId,
                                                 Pageable pageable) {
         return answerRepository.findByUserId(userId, pageable);
-
+    }
 
     @PostMapping("/questions/{questionId}/answers")
-    public Answer createAnswer(@PathVariable (value = "questionId") Long questionId,
+    public Answer createAnswer(@PathVariable(value = "questionId") Long questionId,
                                  @Valid @RequestBody Answer answer) {
         return questionRepository.findById(questionId).map(question -> {
             answer.setQuestion(question);
@@ -50,8 +50,8 @@ public class AnswerController {
     }
 
     @PutMapping("/questions/{questionnId}/answers/{answerId}")
-    public Answer updateAnswer(@PathVariable (value = "questionId") Long questionId,
-                                 @PathVariable (value = "answerId") Long answerId,
+    public Answer updateAnswer(@PathVariable(value = "questionId") Long questionId,
+                                 @PathVariable(value = "answerId") Long answerId,
                                  @Valid @RequestBody Answer answerRequest) {
         if(!answerRepository.existsById(questionId)) {
             throw new ResourceNotFoundException("QuestionId " + questionId + " not found");
@@ -64,8 +64,8 @@ public class AnswerController {
     }
 
     @DeleteMapping("/questions/{questionId}/answers/{answerId}")
-    public ResponseEntity<?> deleteAnswer(@PathVariable (value = "questionId") Long questionId,
-                              @PathVariable (value = "answerId") Long answerId) {
+    public ResponseEntity<?> deleteAnswer(@PathVariable(value = "questionId") Long questionId,
+                              @PathVariable(value = "answerId") Long answerId) {
         return answerRepository.findByIdAndQuestionId(answerId, questionId).map(answer -> {
             answerRepository.delete(answer);
             return ResponseEntity.ok().build();

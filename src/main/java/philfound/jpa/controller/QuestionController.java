@@ -22,6 +22,12 @@ public class QuestionController {
         return questionRepository.findAll(pageable);
     }
 
+    @GetMapping("/users/{userId}/questions")
+    public Page<Answer> getAllQuestionsByUserId(@PathVariable(value = "userId") Long userId,
+                                                Pageable pageable) {
+        return questionRepository.findByUserId(userId, pageable);
+    }
+
     @PostMapping("/questions")
     public Question createQuestion(@Valid @RequestBody Question question) {
         return questionRepository.save(question);
