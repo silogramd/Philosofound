@@ -8,7 +8,7 @@ class QuestionMenu extends React.Component {
   getQuestion() {
   axios({
     method: 'get',
-    url: 'http://philosofound.com/questions'
+    url: '/questions'
   }).then(function(response) {
     console.log(response);
   })
