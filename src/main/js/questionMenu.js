@@ -6,7 +6,7 @@ import axios from 'axios'
 class QuestionMenu extends React.Component {
 
   getQuestion() {
-  axois({
+  axios({
     method: 'get',
     url: 'http://philosofound.com/questions'
   }).then(response -> console.log(response))
