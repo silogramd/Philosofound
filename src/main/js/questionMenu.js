@@ -6,7 +6,7 @@ import axios from 'axios'
 class QuestionMenu extends React.Component {
 
   getQuestion() {
-    axios.get('philosofound.com/questions').then(response => console.log(response))
+    axios.get('./questions').then(response => console.log(response))
   }
 
   render() {
