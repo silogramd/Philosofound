@@ -3,6 +3,11 @@ import React from 'react';
 import StatCard from './statPanel.js'
 import axios from 'axios'
 
+const axiosConfig = {
+  baseURL: "http://philosofound.com",
+  timeout: 30000
+}
+
 class QuestionMenu extends React.Component {
 
   getQuestion() {
