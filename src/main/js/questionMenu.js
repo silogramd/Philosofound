@@ -11,7 +11,7 @@ class QuestionMenu extends React.Component {
   axios({
     method: 'get',
     url: '/questions',
-    baseURL: "http://philosofound.com"
+    baseURL: ""
   }).then(function(response) {
     console.log(response);
   })
