@@ -1,5 +1,5 @@
 package philfound.jpa.controller;
-
+import philfound.jpa.model.User;
 import philfound.jpa.exception.ResourceNotFoundException;
 import philfound.jpa.model.Answer;
 import philfound.jpa.repository.AnswerRepository;
@@ -38,7 +38,7 @@ public class AnswerController {
     @GetMapping("/users/{userId}/answers")
     public Page<Answer> getAllAnswersByUserId(@PathVariable(value = "userId") Long userId,
                                                 Pageable pageable) {
-        return answerRepository.findByUserId(userId, pageable);
+        return answerRepository.findByUser(userRepository.findById(userId).orElse(new User()), pageable);
     }
 
     @PostMapping("/questions/{questionId}/answers/{userId}")
