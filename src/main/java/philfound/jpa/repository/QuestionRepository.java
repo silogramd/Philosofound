@@ -16,6 +16,6 @@ import java.util.Optional;
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Long> {
     List<Question> findByQuestion(String question);
-    Page<Question> findByUserId(Long userId, Pageable pageable);
+    Page<Question> findByUser(User user, Pageable pageable);
 
 }

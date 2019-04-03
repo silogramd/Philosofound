@@ -32,7 +32,7 @@ public class QuestionController {
     @GetMapping("/users/{userId}/questions")
     public Page<Question> getAllQuestionsByUserId(@PathVariable(value = "userId") Long userId,
                                                 Pageable pageable) {
-        return questionsRepository.findByUser(userRepository.findById(userId), pageable);
+        return questionRepository.findByUser(userRepository.findById(userId), pageable);
     }
 
     @PostMapping("/questions/{userId}")
