@@ -5,7 +5,7 @@ import philfound.jpa.model.Question;
 import philfound.jpa.repository.AnswerRepository;
 import philfound.jpa.repository.QuestionRepository;
 import philfound.jpa.repository.UserRepository;
-
+import philfound.jpa.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
