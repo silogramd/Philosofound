@@ -1,12 +1,16 @@
 import QuestionDisplay from './form.js';
 import React from 'react';
-import StatCard from './statPanel.js'
-import axios from 'axios'
+import StatCard from './statPanel.js';
+import request from "request";
 
 class QuestionMenu extends React.Component {
 
   getQuestion() {
-    axios.get('http://philosofound.com/questions').then(response => console.log(response))
+    request('http://philosofound.com/questions', function (error, response, body) {
+      console.log('error', error);
+      console.log('statusCode', response && response.statusCode);
+      console.log('body', body);
+    });
   }
 
   render() {
