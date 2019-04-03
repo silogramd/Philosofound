@@ -17,5 +17,5 @@ import java.util.Optional;
 public interface AnswerRepository extends JpaRepository<Answer, Long>{
     Page<Answer> findByQuestionId(Long questionId, Pageable pageable);
     Optional<Answer> findByIdAndQuestionId(Long id, Long questionId);
-    Page<Answer> findByUserId(Long userId, Pageable pageable);
+    Page<Answer> findByUser(User user, Pageable pageable);
 }
