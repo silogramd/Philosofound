@@ -4,7 +4,7 @@ import StatCard from './statPanel.js'
 import axios from 'axios'
 
 const axiosConfig = {
-  baseURL: "http://philosofound.com",
+  baseURL: "",
   timeout: 30000
 }
 
