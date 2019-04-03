@@ -10,8 +10,8 @@ class QuestionMenu extends React.Component {
   getQuestion() {
   axios({
     method: 'get',
-    url: 'questions',
-    baseURL: "/"
+    url: '',
+    baseURL: ""
   }).then(function(response) {
     console.log(response);
   })
