@@ -37,7 +37,7 @@ class StatCard extends React.Component {
       <Card className={styles.card}>
         <CardContent>
           <Typography className={styles.title} color="textSecondary" gutterBottom>
-            About the Answer You Chose
+            About the Answer You Didnt Chose
           </Typography>
           <Typography variant="h5" component="h2">
             {this.state.answer}
