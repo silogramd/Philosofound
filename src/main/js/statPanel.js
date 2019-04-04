@@ -49,9 +49,9 @@ class StatCard extends React.Component {
             </ul>
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions>
+        // <CardActions>
+        //   <Button size="small">Learn More</Button>
+        // </CardActions>
       </Card>
     );
   }
