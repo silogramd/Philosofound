@@ -28,7 +28,6 @@ class QuestionMenu extends React.Component {
         <br />
         <br />
         <br />
-        <br 
         <br />
         <br />
         <StatCard />
