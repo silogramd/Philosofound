@@ -50,6 +50,7 @@ class StatCard extends React.Component {
           </Typography>
         </CardContent>
         <CardActions>
+          <Button size="small">Learn Less</Button>
         </CardActions>
       </Card>
     );
