@@ -8,7 +8,7 @@ import XMLHttpRequest from 'xhr'
 class QuestionMenu extends React.Component {
 
   getQuestion() {
-    var "json" = XMLHttpRequest.responseType;
+    XMLHttpRequest.responseType = "json"
     function load('http://philosofound.com/questions', callback) {
   var xhr = new XMLHttpRequest();
 
