@@ -1,20 +1,27 @@
 import QuestionDisplay from './form.js';
 import React from 'react';
 import StatCard from './statPanel.js'
-import axios from 'axios'
+import XMLHttpRequest from 'xhr'
 
 
 
 class QuestionMenu extends React.Component {
 
   getQuestion() {
-  axios({
-    method: 'get',
-    url: '/questions',
-    baseUrl: 'http://philosofound.herokuapp.com'
-  }).then(function(response) {
-    console.log(response);
-  })
+    var "json" = XMLHttpRequest.responseType;
+    function load('http://philosofound.com/questions', callback) {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      callback(xhr.response);
+    }
+  }
+
+  xhr.open('GET', url, true);
+  xhr.send('');
+}
+
   }
 
   render() {
