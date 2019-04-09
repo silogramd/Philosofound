@@ -8,7 +8,7 @@ import XMLHttpRequest from 'xhr'
 class QuestionMenu extends React.Component {
 
   getQuestion() {
-    var url = './questions'
+    var url = './api/questions'
     XMLHttpRequest.responseType = "json"
     function load(url, callback) {
   var xhr = new XMLHttpRequest();
