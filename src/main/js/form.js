@@ -36,7 +36,7 @@ class QuestionDisplay extends React.Component {
   }
 
   getQuestion() {
-    axios.get('./api/questions').then(response => console.log(response))
+    axios.get('/api/questions').then(response => console.log(response))
   }
 
   handleChange = event => {
