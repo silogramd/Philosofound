@@ -7,23 +7,23 @@ import XMLHttpRequest from 'xhr'
 
 class QuestionMenu extends React.Component {
 
-  getQuestion() {
-    var url = './answer'
-    XMLHttpRequest.responseType = "json"
-    function load(url, callback) {
-  var xhr = new XMLHttpRequest();
-
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      callback(xhr.response);
-    }
-  }
-
-  xhr.open('GET', url, true);
-  xhr.send('');
-}
-
-  }
+//   getQuestion() {
+//     var url = './answer'
+//     XMLHttpRequest.responseType = "json"
+//     function load(url, callback) {
+//   var xhr = new XMLHttpRequest();
+//
+//   xhr.onreadystatechange = function() {
+//     if (xhr.readyState === 4) {
+//       callback(xhr.response);
+//     }
+//   }
+//
+//   xhr.open('GET', url, true);
+//   xhr.send('');
+// }
+//
+//   }
 
   render() {
     return (
