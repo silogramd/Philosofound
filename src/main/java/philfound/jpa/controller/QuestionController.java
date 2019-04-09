@@ -16,6 +16,7 @@ import philfound.jpa.exception.ResourceNotFoundException;
 import javax.validation.Valid;
 
 @RestController
+@RequestMapping("/api")
 public class QuestionController {
 
     @Autowired
