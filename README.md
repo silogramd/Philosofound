@@ -1,48 +1,21 @@
 **Philosofound**
-The back end to our philosofound project
+Database Design project and learning experience
 
-TODO:
-query for userId in question and answer should get all users
-then see if user.getId == userId 
-and get all the questions for those
+To implement: 
+- organization for front-end
+- redux store(?) to keep track of the current user logged in (this is so we know what user to post, add questions to)
+- login page
+- encryption for login password - in progress
+- interesting queries for questions; i.e. relating demographic information to answer picked
+- data visualization in charts, tables etc on front end
+- questions page with many browsable and answerable questions
+- a way for user to see all questions they've asked, the answers to each
+- report system for bad answers (and/or questions?)
 
-Currently implemented: questions, answers, basic user info (name + email)
-User is written but not functional for testing purposes - 
-we want a working question answer interface first
-
-To test:
-
-1:
-> sudo mysql --password
-
-> mysql> create database db_example; -- Create the new database
-
-> mysql> create user 'springuser'@'%' identified by 'ThePassword'; -- Creates the user
-
-> mysql> grant all on db_example.* to 'springuser'@'%'; -- Gives all the privileges to the new user on the newly created database
-(this allows our application to access the mysql database)
-
-2:
-> git clone https://github.com/JakeChvatal/philosofound-backend.git
-
-> cd philosofound
-
-> ./mvnw spring-boot:run
-(starts the server in the terminal)
-
-To test, visit these URLs:
-> localhost:8080/api/all - shows what is stored
-
-> localhost:8080/api/add/question?question=(question)
-
-> localhost:8080/api/add/answer?questionID=(questionID)&answer=(answer)
-
-where (question) is your question with '+' denoting spaces,
-questionID is the number of the question(the front end will handle this questionID logic,
-so the end user will not have to be concerned with it)
-and (answer) is your answer
-
-This should store things in your database if run correctly; 
-the database (as of now) will reset every time you restart the application
-
-Check out the database in MySQL Workbench while the server is running to monitor it!
+Stretch Goals
+- personal profile page
+-   analytics for your own answers to various questions and those asking them
+-   view / edit personal profile information (political party affiliation may change, for ex)
+- email subscription service?
+- advanced analytics
+- currency / payment model (turn this into a real business, if it has potential lol)
