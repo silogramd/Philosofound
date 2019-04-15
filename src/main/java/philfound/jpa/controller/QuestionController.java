@@ -25,6 +25,9 @@ public class QuestionController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private AnswerRepository answerRepository;
+
     @GetMapping("/questions")
     public Page<Question> getAllQuestions(Pageable pageable) {
         return questionRepository.findAll(pageable);
@@ -59,6 +62,11 @@ public class QuestionController {
             questionRepository.delete(question);
             return ResponseEntity.ok().build();
         }).orElseThrow(() -> new ResourceNotFoundException("PostId " + questionId + " not found"));
+    }
+
+    @GetMapping("/questions/{userId}/next_question")
+    public Question getNextQuestion(@PathVariable Long userId) {
+        
     }
 
 }

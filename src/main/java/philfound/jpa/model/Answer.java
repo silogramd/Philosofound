@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.*;
+
+import java.util.List;
+
 import javax.persistence.*;
 
 import javax.persistence.*;
@@ -41,7 +44,7 @@ public class Answer{
 
     @ManyToMany(mappedBy =  "user_pick_answer")
     @JsonBackReference
-    Page<User> users_voted_for;
+    List<User> users_voted_for;
 
     public Answer() {
 
