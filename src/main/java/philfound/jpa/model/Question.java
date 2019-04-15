@@ -16,10 +16,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Data
-@EqualsAndHashCode(exclude = "answers")
+@EqualsAndHashCode(exclude = "answer")
 
 @Entity // This tells Hibernate to make a table out of this class
-@Table(name = "questions")
+@Table(name = "question")
 public class Question{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
