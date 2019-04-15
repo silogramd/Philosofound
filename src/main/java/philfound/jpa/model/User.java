@@ -61,7 +61,7 @@ public class User{
       joinColumns = @JoinColumn(name = "user_id"),
       inverseJoinColumns = @JoinColumn(name = "answer_id")
     )
-    @JsonManagedReference
+    //@JsonManagedReference
     List<Answer> user_pick_answer;
 
     public User() {

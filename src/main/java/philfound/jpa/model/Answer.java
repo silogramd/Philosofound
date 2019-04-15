@@ -43,7 +43,7 @@ public class Answer{
     private Question question;
 
     @ManyToMany(mappedBy =  "user_pick_answer")
-    @JsonBackReference
+    @JsonIgnore
     List<User> user_pick_answer;
 
     public Answer() {
