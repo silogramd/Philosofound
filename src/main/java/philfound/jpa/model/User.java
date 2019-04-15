@@ -62,7 +62,7 @@ public class User{
       inverseJoinColumns = @JoinColumn(name = "answer_id")
     )
     @JsonManagedReference
-    List<Answer> votes;
+    List<Answer> user_pick_answer;
 
     public User() {
 
@@ -136,7 +136,7 @@ public class User{
 
   public ArrayList<Answer> getVotes() {
     ArrayList<Answer> temp = new ArrayList<Answer>();
-    temp.addAll(this.votes);
+    temp.addAll(this.user_pick_answer);
     return temp;
   }
 }
