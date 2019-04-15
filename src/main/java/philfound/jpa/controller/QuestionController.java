@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import philfound.jpa.exception.ResourceNotFoundException;
 
 import java.util.ArrayList;
 
@@ -48,7 +47,7 @@ public class QuestionController {
         return userRepository.findById(userId).map(user -> {
           question.setUser(user);
           return questionRepository.save(question);
-        }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
+        }).orElseThrow(() -> new IllegalStateException("UserId " + userId + " not found"));
     }
 
     @PutMapping("/questions/{questionId}")
@@ -57,7 +56,7 @@ public class QuestionController {
             question.setQuestion(questionRequest.getQuestion());
             return questionRepository.save(question);
 
-        }).orElseThrow(() -> new ResourceNotFoundException("QuestionId " + questionId + " not found"));
+        }).orElseThrow(() -> new IllegalStateException("QuestionId " + questionId + " not found"));
     }
 
     @DeleteMapping("/questions/{questionId}")
@@ -65,7 +64,7 @@ public class QuestionController {
         return questionRepository.findById(questionId).map(question -> {
             questionRepository.delete(question);
             return ResponseEntity.ok().build();
-        }).orElseThrow(() -> new ResourceNotFoundException("PostId " + questionId + " not found"));
+        }).orElseThrow(() -> new IllegalStateException("Can't find the question!");
     }
 
     @GetMapping("/questions/{userId}/next_question")

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import philfound.jpa.exception.ResourceNotFoundException;
 
 import javax.validation.Valid;
 
@@ -34,7 +33,7 @@ public class UserController {
         return userRepository.findById(userId).map(user -> {
             user.setUsername(userRequest.getUsername());
             return userRepository.save(user);
-        }).orElseThrow(() -> new ResourceNotFoundException("UserID " + userId + " not found"));
+        }).orElseThrow(() -> new IllegalStateException("UserID " + userId + " not found"));
     }
 
     @DeleteMapping("/users/{userId}")
@@ -42,7 +41,7 @@ public class UserController {
         return userRepository.findById(userId).map(user -> {
             userRepository.delete(user);
             return ResponseEntity.ok().build();
-        }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
+        }).orElseThrow(() -> new IllegalStateException("UserId " + userId + " not found"));
     }
 
 }

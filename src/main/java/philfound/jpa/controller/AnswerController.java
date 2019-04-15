@@ -1,6 +1,5 @@
 package philfound.jpa.controller;
 import philfound.jpa.model.User;
-import philfound.jpa.exception.ResourceNotFoundException;
 import philfound.jpa.model.Answer;
 import philfound.jpa.repository.AnswerRepository;
 import philfound.jpa.repository.QuestionRepository;
@@ -51,9 +50,9 @@ public class AnswerController {
           return userRepository.findById(userId).map(user -> {
             answer.setUser(user);
             return answerRepository.save(answer);
-          }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
+          }).orElseThrow(() -> new IllegalStateException("UserId " + userId + " not found"));
 
-        }).orElseThrow(() -> new ResourceNotFoundException("QuestionId " + questionId + " not found"));
+        }).orElseThrow(() -> new IllegalStateException("QuestionId " + questionId + " not found"));
     }
 
     @PutMapping("/questions/{questionId}/answers/{answerId}")
@@ -61,13 +60,13 @@ public class AnswerController {
                                  @PathVariable(value = "answerId") Long answerId,
                                  @Valid @RequestBody Answer answerRequest) {
         if(!answerRepository.existsById(questionId)) {
-            throw new ResourceNotFoundException("QuestionId " + questionId + " not found");
+            throw new IllegalStateException("QuestionId " + questionId + " not found");
         }
 
         return answerRepository.findById(answerId).map(answer -> {
             answer.setText(answerRequest.getText());
             return answerRepository.save(answer);
-        }).orElseThrow(() -> new ResourceNotFoundException("AnswerId " + answerId + "not found"));
+        }).orElseThrow(() -> new IllegalStateException("AnswerId " + answerId + "not found"));
     }
 
     @DeleteMapping("/questions/{questionId}/answers/{answerId}")
@@ -76,6 +75,6 @@ public class AnswerController {
         return answerRepository.findByIdAndQuestionId(answerId, questionId).map(answer -> {
             answerRepository.delete(answer);
             return ResponseEntity.ok().build();
-        }).orElseThrow(() -> new ResourceNotFoundException("Answer not found with id " + answerId + " and questionId " + questionId));
+        }).orElseThrow(() -> new IllegalStateException("Answer not found with id " + answerId + " and questionId " + questionId));
     }
 }
