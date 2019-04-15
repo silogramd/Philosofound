@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -133,6 +134,9 @@ public class User{
     this.party = p;
   }
 
-
-
+  public ArrayList<Answer> getVotes() {
+    ArrayList<Answer> temp = new ArrayList<Answer>();
+    temp.addAll(this.votes);
+    return temp;
+  }
 }

@@ -85,4 +85,8 @@ public class Answer{
   public User getUser() {
     return this.user;
   }
+
+  public Question getQuestion() {
+    return this.question;
+  }
 }

@@ -48427,10 +48427,10 @@ MenuAppBar.propTypes = {
 
 /***/ }),
 
-/***/ "./src/main/js/form.js":
-/*!*****************************!*\
-  !*** ./src/main/js/form.js ***!
-  \*****************************/
+/***/ "./src/main/js/QuestionDisplay.js":
+/*!****************************************!*\
+  !*** ./src/main/js/QuestionDisplay.js ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -48517,6 +48517,12 @@ function (_React$Component) {
       value: 0
     });
 
+    _defineProperty(_assertThisInitialized(_this), "componentDidMount", function () {
+      axios__WEBPACK_IMPORTED_MODULE_9___default.a.get('/api/questions/1/').then(function (response) {
+        return console.log(response);
+      });
+    });
+
     _defineProperty(_assertThisInitialized(_this), "handleChange", function (event) {
       _this.getQuestion();
 
@@ -48531,13 +48537,6 @@ function (_React$Component) {
   }
 
   _createClass(QuestionDisplay, [{
-    key: "getQuestion",
-    value: function getQuestion() {
-      axios__WEBPACK_IMPORTED_MODULE_9___default.a.get('/api/questions').then(function (response) {
-        return console.log(response);
-      });
-    }
-  }, {
     key: "makeItems",
     value: function makeItems() {
       var components = [];
@@ -48619,7 +48618,7 @@ _serviceWorker__WEBPACK_IMPORTED_MODULE_3__["unregister"]();
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form.js */ "./src/main/js/form.js");
+/* harmony import */ var _QuestionDisplay_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuestionDisplay.js */ "./src/main/js/QuestionDisplay.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _statPanel_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./statPanel.js */ "./src/main/js/statPanel.js");
@@ -48659,7 +48658,7 @@ function (_React$Component) {
   _createClass(QuestionMenu, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_form_js__WEBPACK_IMPORTED_MODULE_0__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_statPanel_js__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_QuestionDisplay_js__WEBPACK_IMPORTED_MODULE_0__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_statPanel_js__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 

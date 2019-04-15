@@ -35,8 +35,9 @@ class QuestionDisplay extends React.Component {
     "There is no meaning.","Happiness.","Success."];
   }
 
-  getQuestion() {
-    axios.get('/api/questions').then(response => console.log(response))
+  componentDidMount = () => {
+    axios.get('/api/questions/1/').then(response => 
+      console.log(response))
   }
 
   handleChange = event => {

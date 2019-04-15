@@ -1,4 +1,4 @@
-import QuestionDisplay from './form.js';
+import QuestionDisplay from './QuestionDisplay.js';
 import React from 'react';
 import StatCard from './statPanel.js'
 

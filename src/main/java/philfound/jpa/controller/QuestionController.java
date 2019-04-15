@@ -1,6 +1,8 @@
 package philfound.jpa.controller;
 
 import org.springframework.data.domain.Page;
+
+import philfound.jpa.model.Answer;
 import philfound.jpa.model.Question;
 import philfound.jpa.repository.AnswerRepository;
 import philfound.jpa.repository.QuestionRepository;
@@ -12,6 +14,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import philfound.jpa.exception.ResourceNotFoundException;
+
+import java.util.ArrayList;
 
 import javax.validation.Valid;
 
@@ -66,7 +70,19 @@ public class QuestionController {
 
     @GetMapping("/questions/{userId}/next_question")
     public Question getNextQuestion(@PathVariable Long userId) {
-        
+        ArrayList<Answer> answered = userRepository.findById(userId).get().getVotes();
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions.addAll(questionRepository.findAll());
+
+        for(Question q : questions) {
+            for(Answer a : answered) {
+                if(!(a.getQuestion() == q)) {
+                    return q;
+                }
+            }
+        }
+
+        return null;
     }
 
 }
