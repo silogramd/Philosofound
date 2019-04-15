@@ -17,7 +17,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 
 @Data
-@Table(name = "answers")
+@Table(name = "answer")
 @Entity // This tells Hibernate to make a table out of this class
 public class Answer{
     @Id
