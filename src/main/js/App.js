@@ -8,10 +8,10 @@ class App extends Component {
   }
 
   renderPages = () => {
-    if(this.state.userId !== null) {
-      return <QuestionMenu userId = {this.state.userId}/>;
-    } else {
+    if(this.state.userId === null) {
       return <Login setId = {this.setUserId}/>;
+    } else {
+      return <QuestionMenu userId = {this.state.userId}/>;
     }
   }
 
