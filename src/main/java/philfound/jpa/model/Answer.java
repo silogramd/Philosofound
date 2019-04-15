@@ -17,8 +17,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 
 @Data
-@Table(name = "answer")
-@Entity // This tells Hibernate to make a table out of this class
+@Entity
 public class Answer{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)

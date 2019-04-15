@@ -19,7 +19,6 @@ import javax.validation.constraints.Size;
 @EqualsAndHashCode(exclude = "answer")
 
 @Entity // This tells Hibernate to make a table out of this class
-@Table(name = "question")
 public class Question{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
