@@ -15,6 +15,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import org.springframework.data.domain.Page;
+
 
 @Data
 @EqualsAndHashCode
@@ -52,7 +56,7 @@ public class User{
     @ManyToMany
     @JoinTable(
       name = "user_pick_answer",
-      joinColumn = @JoinColumn(name = "user_id"),
+      joinColumns = @JoinColumn(name = "user_id"),
       inverseJoinColumns = @JoinColumn(name = "answer_id")
     )
     @JsonManagedReference
