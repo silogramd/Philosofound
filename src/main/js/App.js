@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
 import QuestionMenu from './questionMenu.js'
 import AppBar from './AppBar.js'
 
@@ -10,7 +9,7 @@ class App extends Component {
 
   renderPages = () => {
     if(this.state.userId !== null) {
-      return <QuestionMenu />;
+      return <QuestionMenu userId = {this.state.userId}/>;
     } else {
       return <Login setId = {this.setUserId}/>;
     }
@@ -22,8 +21,6 @@ class App extends Component {
     });
   }
   
-
-
   render() {
     return (
       <div className="App">

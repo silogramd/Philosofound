@@ -9,7 +9,6 @@ import philfound.jpa.repository.QuestionRepository;
 import philfound.jpa.repository.UserRepository;
 import philfound.jpa.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

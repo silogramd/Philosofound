@@ -48156,10 +48156,8 @@ module.exports = function(originalModule) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/Button/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _questionMenu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./questionMenu.js */ "./src/main/js/questionMenu.js");
-/* harmony import */ var _AppBar_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AppBar.js */ "./src/main/js/AppBar.js");
+/* harmony import */ var _questionMenu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./questionMenu.js */ "./src/main/js/questionMenu.js");
+/* harmony import */ var _AppBar_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AppBar.js */ "./src/main/js/AppBar.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48179,7 +48177,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -48209,7 +48206,9 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "renderPages", function () {
       if (_this.state.userId !== null) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_questionMenu_js__WEBPACK_IMPORTED_MODULE_2__["default"], null);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_questionMenu_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          userId: _this.state.userId
+        });
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Login, {
           setId: _this.setUserId
@@ -48231,7 +48230,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "App"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AppBar_js__WEBPACK_IMPORTED_MODULE_3__["default"], null), this.renderPages);
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AppBar_js__WEBPACK_IMPORTED_MODULE_2__["default"], null), this.renderPages);
     }
   }]);
 
