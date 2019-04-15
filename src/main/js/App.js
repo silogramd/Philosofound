@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   renderPages = () => {
-    if(this.state.userId === null) {
+    if(this.state.userId == null) {
       Console.log("sets id");
       return <Login setId = {this.setUserId}/>;
       

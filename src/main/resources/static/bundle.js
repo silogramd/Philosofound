@@ -52298,7 +52298,7 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderPages", function () {
-      if (_this.state.userId === null) {
+      if (_this.state.userId == null) {
         Console.log("sets id");
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Login_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
           setId: _this.setUserId
