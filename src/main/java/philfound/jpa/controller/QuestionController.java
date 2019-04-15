@@ -64,7 +64,7 @@ public class QuestionController {
         return questionRepository.findById(questionId).map(question -> {
             questionRepository.delete(question);
             return ResponseEntity.ok().build();
-        }).orElseThrow(() -> new IllegalStateException("Can't find the question!");
+        }).orElseThrow(() -> new IllegalStateException("Can't find the question!"));
     }
 
     @GetMapping("/questions/{userId}/next_question")
