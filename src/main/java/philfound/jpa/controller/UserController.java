@@ -22,6 +22,11 @@ public class UserController {
         return userRepository.findAll(pageable);
     }
 
+    @GetMapping("/users/{username}/{password}")
+    public Long verifyUser(@PathVariable String username, @PathVariable String password) {
+        return userRepository.findByUsernameAndPassword(username, password).getId();
+    }
+
     @PostMapping("/users")
     public User createUser(@Valid @RequestBody User user) {
         return userRepository.save(user);

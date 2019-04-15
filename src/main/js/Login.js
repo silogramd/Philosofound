@@ -52,7 +52,7 @@ class SimpleModal extends React.Component {
     }
 
     handleLogin = () => {
-        axios.get('/api/questions/1/').then(response => 
+        axios.get('/api/{/1/').then(response => 
               console.log(response));
           }
     }
