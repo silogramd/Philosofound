@@ -52294,21 +52294,16 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(App)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      userId: null
-    });
+      userId: null // renderPages = () => {
+      //   if(this.state.userId == null) {
+      //     Console.log("sets id");
+      //     return <Login setId = {this.setUserId}/>;
+      //   } else {
+      //     Console.log("just displays questionmenu");
+      //     return <QuestionMenu userId = {this.state.userId}/>;
+      //   }
+      // }
 
-    _defineProperty(_assertThisInitialized(_this), "renderPages", function () {
-      if (_this.state.userId == null) {
-        Console.log("sets id");
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Login_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          setId: _this.setUserId
-        });
-      } else {
-        Console.log("just displays questionmenu");
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_questionMenu_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          userId: _this.state.userId
-        });
-      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "setUserId", function (userId) {

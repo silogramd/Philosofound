@@ -8,16 +8,16 @@ class App extends Component {
     userId: null,
   }
 
-  renderPages = () => {
-    if(this.state.userId == null) {
-      Console.log("sets id");
-      return <Login setId = {this.setUserId}/>;
+  // renderPages = () => {
+  //   if(this.state.userId == null) {
+  //     Console.log("sets id");
+  //     return <Login setId = {this.setUserId}/>;
       
-    } else {
-      Console.log("just displays questionmenu");
-      return <QuestionMenu userId = {this.state.userId}/>;
-    }
-  }
+  //   } else {
+  //     Console.log("just displays questionmenu");
+  //     return <QuestionMenu userId = {this.state.userId}/>;
+  //   }
+  // }
 
   setUserId = (userId) => {
     this.setState({
