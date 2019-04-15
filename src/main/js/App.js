@@ -10,8 +10,11 @@ class App extends Component {
 
   renderPages = () => {
     if(this.state.userId === null) {
+      Console.log("sets id");
       return <Login setId = {this.setUserId}/>;
+      
     } else {
+      Console.log("just displays questionmenu");
       return <QuestionMenu userId = {this.state.userId}/>;
     }
   }

@@ -52299,10 +52299,12 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "renderPages", function () {
       if (_this.state.userId === null) {
+        Console.log("sets id");
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Login_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
           setId: _this.setUserId
         });
       } else {
+        Console.log("just displays questionmenu");
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_questionMenu_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
           userId: _this.state.userId
         });
