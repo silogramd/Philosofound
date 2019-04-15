@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <AppBar />
-        {this.renderPages}
+        {this.renderPages()}
       </div>
     );
   }

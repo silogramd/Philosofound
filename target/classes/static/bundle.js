@@ -52323,7 +52323,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "App"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AppBar_js__WEBPACK_IMPORTED_MODULE_2__["default"], null), this.renderPages);
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AppBar_js__WEBPACK_IMPORTED_MODULE_2__["default"], null), this.renderPages());
     }
   }]);
 
