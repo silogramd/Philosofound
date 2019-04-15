@@ -49,6 +49,15 @@ public class User{
     @Column
     private String party;
 
+    @ManyToMany
+    @JoinTable(
+      name = "user_pick_answer",
+      joinColumn = @JoinColumn(name = "user_id"),
+      inverseJoinColumns = @JoinColumn(name = "answer_id")
+    )
+    @JsonManagedReference
+    Page<Answer> votes;
+
     public User() {
 
     }
@@ -118,5 +127,7 @@ public class User{
   public void setParty(String p) {
     this.party = p;
   }
+
+
 
 }

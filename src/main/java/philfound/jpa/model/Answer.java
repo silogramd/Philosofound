@@ -35,6 +35,10 @@ public class Answer{
     @JoinColumn(name = "question_id", nullable = false)
     private Question question;
 
+    @ManyToMany(mappedBy =  "user_pick_answer")
+    @JsonBackReference
+    Page<User> users_voted_for;
+
     public Answer() {
 
     }
