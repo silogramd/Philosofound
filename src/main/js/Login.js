@@ -52,9 +52,15 @@ class SimpleModal extends React.Component {
     }
 
     handleLogin = () => {
-        axios.get('/api/{/1/').then(response => 
-              console.log(response));
-          }
+        axios.get('/api/users/' + this.state.username + '/' + this.state.password)
+        .then(response => 
+            this.props.setUserId(response.data)
+        ).catch(err => {
+            Console.log(err);
+            this.setState({
+                noUsernameError: true
+            });
+          });
     }
 
     hasError = () => {
