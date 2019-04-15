@@ -30,7 +30,7 @@ const styles = theme => ({
   },
 });
 
-class SimpleModal extends React.Component {
+class Login extends React.Component {
 
     state = {
         username: null,
@@ -69,6 +69,10 @@ class SimpleModal extends React.Component {
         } 
     }
 
+    componentDidMount() {
+        Console.log("this component loaded");
+    }
+
     
   render() {
     const { classes } = this.props;
@@ -102,7 +106,6 @@ class SimpleModal extends React.Component {
              <Button variant="outlined" color="primary" handleChange = {this.handleLogin}>
                 Log In
             </Button>
-            <SimpleModalWrapped />
           </div>
         </Modal>
       </div>
@@ -110,6 +113,6 @@ class SimpleModal extends React.Component {
   }
 }
 
-const SimpleModalWrapped = withStyles(styles)(SimpleModal);
+//const SimpleModalWrapped = withStyles(styles)(SimpleModal);
 
-export default SimpleModalWrapped;
+export default Login;
