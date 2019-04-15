@@ -44,7 +44,7 @@ public class Answer{
 
     @ManyToMany(mappedBy =  "user_pick_answer")
     @JsonBackReference
-    List<User> users_voted_for;
+    List<User> user_pick_answer;
 
     public Answer() {
 

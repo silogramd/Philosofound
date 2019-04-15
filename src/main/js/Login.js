@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
+import axios from 'axios';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -51,13 +52,14 @@ class SimpleModal extends React.Component {
     }
 
     handleLogin = () => {
-        // makes query
-        // updates text displayed on component?
+        axios.get('/api/questions/1/').then(response => 
+              console.log(response));
+          }
     }
 
     hasError = () => {
         if(this.state.noUsernameError || this.state.wrongPasswordError) {
-            return <div>Incorrect Login Information</div>
+            return <div>Incorrect Login Information</div>;
         } 
     }
 
